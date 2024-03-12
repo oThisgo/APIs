@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 1</title>
+</head>
+<body>
+
+    <div id="MyDiv">
+        Oi
+    </div>
+    <button onclick="Alterar()">Alterar</button><br>
+
+    <br>
+
+    <input id="nome" type="text">
+    <button onclick="Adicionar()"> + </button><br>
+
+    <div id="lista"> 
+        
+    </div>
+
+    <script>
+        var MyDiv = document.getElementById("MyDiv")
+        var Content = MyDiv.innerHTML + " pessoal! <hr>"
+        MyDiv.innerHTML = Content
+        window.alert("Acorda ae paizão") //pode usar só alert()
+        console.log("Neymar")
+
+        function Alterar(){
+            MyDiv.style.background = "Green"
+            MyDiv.style.width = "fit-content"
+            MyDiv.style.padding = "10px"
+            MyDiv.setAttribute("align", "center")
+        }
+
+        var lista = document.getElementById("lista")
+        function Adicionar(){
+            var pessoas = lista.innerHTML + "<br>" + document.getElementById('nome').value
+            lista.innerHTML = pessoas
+            document.getElementById('nome').value = ""
+        }
+
+        
+    </script>
+
+</body>
+</html>
