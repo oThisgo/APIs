@@ -25,8 +25,8 @@ function read(){
 function calcular(){
 
     retangulo = {
-        altura : document.getElementById('altura').value(), 
-        largura : document.getElementById('largura').value(),
+        altura : parseFloat(document.getElementById('altura').value), 
+        largura : parseFloat(document.getElementById('largura').value),
         area : function(){
             return this.largura * this.altura;
         }
