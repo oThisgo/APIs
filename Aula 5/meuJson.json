@@ -1,0 +1,13 @@
+{
+    "nome" : "Thiago",
+    "idade" : 19,
+    "altura" : 1.83,
+    "formacoes" : [2022, 2022, 2025, 2027],
+    "grau" : ["Médio", "Técnico", "Graduação Tecnólogo", "Graduação Licenciatura"],
+    "endereco" : null,
+    "pai" : false,
+    "animais" : [
+        {"nome" : "Black", "idade" : 7},
+        {"nome" : "Bolinha", "idade" : 6}
+    ]
+}
