@@ -43,4 +43,31 @@
         }
     }
 
+    if (isset($_REQUEST["inserir"])){
+        try{
+            $conn = mysqli_connect("localhost", "root", "", "loja");
+            if ($conn){
+
+                $nome = $_POST["nome"];
+                $preco = $_POST["preco"];
+                $qtd = $_POST["qtd"];
+                $sql = "INSERT INTO produto (nome, preco, quantidade) VALUES ('$nome', $preco, $qtd)";
+
+                $result = mysqli_query($conn, $sql);
+                mysqli_close($conn);
+
+                if($result > 0){
+                    echo '{ "resposta" : "Produto inserido com sucesso"}';
+                }else {
+                    echo '{ "resposta" : "Erro ao inserir produto"}';
+                }
+            }else{
+                echo '{"resposta" : "Erro ao conectar com o banco de dados"}';
+            }
+
+        }catch(\Throwable $th){
+            echo ' { "resposta" : "Erro ao consultar o banco de dados"}';
+        }
+    }
+
 ?>

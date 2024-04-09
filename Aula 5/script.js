@@ -83,5 +83,26 @@ function excluir(id){
     }
 
     xhttp.open("GET", "server.php?excluir&id="+id, true);
-    xhttp.send()
+    xhttp.send();
+}
+
+function inserir(){
+    xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            data = JSON.parse(this.responseText);
+            if(data.resposta){
+                alert(data.resposta);
+                products();
+            }
+        }
+    }
+
+    nome = document.getElementById("txtNome").value;
+    preco = document.getElementById("txtPreco").value;
+    qtd = document.getElementById("txtQtd").value;
+    xhttp.open("POST", "server.php?inserir", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("nome="+nome+"&preco="+preco+"&qtd="+qtd);
 }
